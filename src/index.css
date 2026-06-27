@@ -1,1 +1,10 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-danger: #ef4444;
+  --color-surface: #f8fafc;
+  --font-body: "Inter", sans-serif;
+  --radius-btn: 8px;
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
