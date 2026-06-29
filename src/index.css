@@ -1,10 +1,33 @@
 @import "tailwindcss";
 
 @theme {
+
+  /* SPACING */
+  --spacing-s: 10px;
+  --spacing-m: 20px;
+  --spacing-l: 30px;
+
+  /* LIGHT THEME */
+
+  /* back */
   --color-primary: #3b82f6;
-  --color-danger: #ef4444;
-  --color-surface: #f8fafc;
-  --font-body: "Inter", sans-serif;
-  --radius-btn: 8px;
-  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  --color-black: #000000;
+  --color-brown: #9E2B25;
+  --color-marker: #C3F73A;
+  --color-green: #216869;
+  --color-white: #F0EFF4;
+
+
+
+
+
+
+  /* DARK THEME */
+
+}
+
+/* BASE UI SETUP: */
+.root{
+  isolation: isolate;
 }
