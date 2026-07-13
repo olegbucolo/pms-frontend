@@ -81,7 +81,8 @@ export default function MainSearch() {
             filter={null}
         >
 
-            <Autocomplete.InputGroup className='flex overflow-hidden justify-between rounded-4xl  border p-1'>
+            <Autocomplete.InputGroup
+                className='h-15 flex backdrop-blur-[2px] max-w-200 mx-auto overflow-hidden z-10 justify-between items-center rounded-4xl border p-0.75'>
                 <Autocomplete.Input placeholder="Search..." className={`${styles.Input} ${autocompleteSearch.Input}`} />
                 <Button className={`${buttoncss.Button} ${buttonSearch.Button}`}>Search</Button>
             </Autocomplete.InputGroup>

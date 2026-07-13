@@ -14,7 +14,7 @@ import { NavDropdown, NavSimpleLink } from "./NavDropdown";
 export default function MainNav() {
     return (
         <NavigationMenu.Root className={`${styles.Root} `}>
-            <NavigationMenu.List className={`${styles.List} justify-end`}>
+            <NavigationMenu.List className={`${styles.List} justify-center`}>
                 {navItems.map(navItems =>
                     navItems.children?.length
                         ? <NavDropdown key={navItems.title} item={navItems} />

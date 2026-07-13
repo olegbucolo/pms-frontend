@@ -1,9 +1,10 @@
 import { Button, Drawer, Separator } from '@base-ui/react';
 import styles from './index.module.css';
 import LoginAvatar from '../login/LoginAvatar';
-import separatorCss from '../separator.module.css'
+import separator from '../separator.module.css'
 import { IoClose } from 'react-icons/io5';
 import { NavLink } from 'react-router-dom';
+import drawerSeparator from './drawerSeparator.module.css'
 
 export default function MainDrawer() {
     return (
@@ -12,20 +13,25 @@ export default function MainDrawer() {
                 <LoginAvatar />
             </Drawer.Trigger>
             <Drawer.Portal>
-                <Drawer.Backdrop className={`${styles.Backdrop} ${separatorCss.Container}`} />
+                <Drawer.Backdrop className={`${styles.Backdrop} ${separator.Container}`} />
                 <Drawer.Viewport className={styles.Viewport}>
                     <Drawer.Popup className={styles.Popup}>
                         <Drawer.Content className={styles.Content}>
                             <div className='flex items-center justify-between'>
-                                <LoginAvatar />
+                                <div className='flex items-center '>
+                                    <LoginAvatar />
+                                    <h3 className='ms-3'>Oleg Bucolo</h3>
+                                </div>
                                 <Drawer.Close className="cursor-pointer">
                                     <IoClose className='text-2xl' />
                                 </Drawer.Close>
 
                             </div>
-                            <NavLink to="/" className={separatorCss.Link}>prova</NavLink>
+                            <Separator orientation="horizontal" className={`${separator.Separator} ${drawerSeparator.Separator}`} />
+
+                            <NavLink to="/" className={separator.Link}>prova</NavLink>
                             {/* <Drawer.Title className={styles.Title}>Drawer</Drawer.Title> */}
-                            <Separator orientation="horizontal" className={separatorCss.Separator} />
+                            <Separator orientation="horizontal" className={`${separator.Separator} ${drawerSeparator.Separator}`} />
                             <Drawer.Description className={styles.Description}>
                                 This is a drawer that slides in from the side. You can swipe to dismiss it.
                             </Drawer.Description>
