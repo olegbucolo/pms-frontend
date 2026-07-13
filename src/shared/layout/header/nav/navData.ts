@@ -1,49 +1,95 @@
-export const overviewLinks = [
+export const exploreLinks = [
     {
         href: '/react/overview/quick-start',
-        title: 'Quick Start',
-        description: 'Install and assemble your first component.',
+        title: 'Buy',
+        description: 'Find the perfect property to call home.',
     },
     {
         href: '/react/overview/accessibility',
-        title: 'Accessibility',
-        description: 'Learn how we build accessible components.',
+        title: 'Rent',
+        description: 'Find your perfect place to stay.',
     },
     {
         href: '/react/overview/releases',
-        title: 'Releases',
-        description: 'See what’s new in the latest Base UI versions.',
+        title: 'Auctions',
+        description: 'Discover properties available through auction.',
     },
     {
         href: '/react/overview/about',
-        title: 'About',
-        description: 'Learn more about Base UI and our mission.',
+        title: 'Projects',
+        description: 'Support and finance exciting property projects.',
     },
 ];
 
-export const handbookLinks = [
+export const listLinks = [
     {
         href: '/react/handbook/styling',
-        title: 'Styling',
+        title: 'Sell',
         description:
-            'Base UI components can be styled with plain CSS, Tailwind CSS, CSS-in-JS, or CSS Modules.',
+            'List your property for sale. Make it look cool!',
     },
     {
         href: '/react/handbook/animation',
-        title: 'Animation',
+        title: 'Rent Out',
         description:
-            'Base UI components can be animated with CSS transitions, CSS animations, or JavaScript libraries.',
+            'List your property for rent. Hopefully the tenants are nice.',
     },
     {
         href: '/react/handbook/composition',
-        title: 'Composition',
+        title: 'Projects',
         description:
-            'Base UI components can be replaced and composed with your own existing components.',
+            'Share your project and let someone bring it to life. Hopefully.',
+    },
+    {
+        href: '/react/handbook/composition',
+        title: 'Auctions',
+        description:
+            'Put your property up for auction. Fingers crossed!',
+    },
+];
+
+export const partnersLinks = [
+    {
+        href: '/partners/design',
+        title: 'Design',
+        description:
+            'Architects, Interior Designers, Landscape Architects, and Structural Engineers.',
+    },
+    {
+        href: '/partners/construction',
+        title: 'Construction',
+        description:
+            'Construction Companies, General Contractors, and Renovation Companies.',
+    },
+    {
+        href: '/partners/finance',
+        title: 'Finance',
+        description:
+            'Banks, Mortgage Brokers, Investors, and Private Lenders.',
+    },
+    {
+        href: '/partners/property-services',
+        title: 'Property Services',
+        description:
+            'Real Estate Agencies, Property Managers, Surveyors, and Appraisers.',
+    },
+    {
+        href: '/partners/legal',
+        title: 'Legal',
+        description:
+            'Notaries and Lawyers.',
+    },
+    {
+        href: '/partners/home-services',
+        title: 'Home Services',
+        description:
+            'Electricians, Plumbers, HVAC Specialists, and Smart Home Installers.',
     },
 ];
 
 export const navItems = [
-    { title: 'Home', href: 'https://www.google.com' },
-    { title: 'Explore', children: overviewLinks },
-    { title: 'Handbook', children: handbookLinks },
+    { title: 'Explore', children: exploreLinks },
+    { title: 'List', children: listLinks },
+    { title: 'Partners', children: partnersLinks },
+    { title: 'About', href: 'https://www.google.com' },
 ];

@@ -2,8 +2,6 @@ import { NavigationMenu } from "@base-ui/react";
 import { FaCaretDown } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import styles from './index.module.css'
-import { handbookLinks } from "./navData";
-import { overviewLinks } from "./navData";
 import { navItems } from './navData';
 import { NavDropdown, NavSimpleLink } from "./NavDropdown";
 
