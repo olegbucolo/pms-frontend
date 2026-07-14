@@ -94,7 +94,6 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   width: 100%;
-  min-height: 8rem;
   border-inline: 1px solid oklch(14.5% 0 0deg);
   border-block: 1px solid oklch(14.5% 0 0deg);
 
@@ -111,7 +110,6 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 1rem;
 
   outline: 0;
   font-size: 0.875rem;

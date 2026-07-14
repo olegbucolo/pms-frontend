@@ -82,15 +82,15 @@ export default function MainSearch() {
         >
 
             <Autocomplete.InputGroup
-                className='h-15 flex backdrop-blur-[2px] max-w-200 mx-auto overflow-hidden z-10 justify-between items-center rounded-4xl border p-0.75'>
+                className='h-15 flex w-full overflow-hidden z-10 justify-between items-center rounded-4xl p-0.75'>
                 <Autocomplete.Input placeholder="Search..." className={`${styles.Input} ${autocompleteSearch.Input}`} />
                 <Button className={`${buttoncss.Button} ${buttonSearch.Button}`}>Search</Button>
             </Autocomplete.InputGroup>
 
 
             <Autocomplete.Portal hidden={!status}>
-                <Autocomplete.Positioner className={styles.Positioner} sideOffset={4} align="start">
-                    <Autocomplete.Popup className={styles.Popup} aria-busy={isPending || undefined}>
+                <Autocomplete.Positioner className={`${styles.Positioner} `} sideOffset={4} align="start">
+                    <Autocomplete.Popup className={`${styles.Popup} rounded-4xl py-5 bg-transparent! backdrop-blur-sm`} aria-busy={isPending || undefined}>
                         <div className={styles.Viewport}>
                             <Autocomplete.Status>
                                 {status && <div className={styles.Status}>{status}</div>}
