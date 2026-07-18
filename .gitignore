@@ -26,4 +26,6 @@ dist-ssr
 
 # Files and folders
 .env
-/continue
+
+# Personal considerations on the project
+/personal

@@ -119,6 +119,7 @@ async function searchMovies(
     query: string,
     filter: (item: string, query: string) => boolean,
 ): Promise<{ movies: Movie[]; error: string | null }> {
+
     // Simulate network delay
     await new Promise((resolve) => {
         setTimeout(resolve, Math.random() * 500 + 100);
@@ -131,6 +132,8 @@ async function searchMovies(
             error: 'Failed to fetch movies. Please try again.',
         };
     }
+
+    // TODO: axios call here (probably)
 
     const movies = top100Movies.filter(
         (movie) => filter(movie.title, query) || filter(movie.year.toString(), query),

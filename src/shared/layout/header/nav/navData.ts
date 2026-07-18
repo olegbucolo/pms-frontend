@@ -1,21 +1,21 @@
 export const exploreLinks = [
     {
-        href: '/react/overview/quick-start',
+        href: '/buy',
         title: 'Buy',
         description: 'Find the perfect property to call home.',
     },
     {
-        href: '/react/overview/accessibility',
+        href: '/rent',
         title: 'Rent',
         description: 'Find your perfect place to stay.',
     },
     {
-        href: '/react/overview/releases',
+        href: '/auctions',
         title: 'Auctions',
         description: 'Discover properties available through auction.',
     },
     {
-        href: '/react/overview/about',
+        href: '/projects',
         title: 'Projects',
         description: 'Support and finance exciting property projects.',
     },
