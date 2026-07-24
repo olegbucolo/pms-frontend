@@ -1,6 +1,6 @@
 import { Autocomplete, Button } from '@base-ui/react';
-import styles from './index.module.css'
 import { useRef, useState, useEffect, useTransition, type ReactNode } from 'react';
+import styles from './index.module.css'
 import buttoncss from '../button.module.css'
 import buttonSearch from './buttonSearch.module.css'
 import autocompleteSearch from './autocompleteSearch.module.css'

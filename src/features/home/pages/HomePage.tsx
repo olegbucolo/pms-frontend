@@ -5,7 +5,7 @@ export default function HomePage() {
     return (
         <>
             <section className={`h-screen relative w-full flex justify-center items-center`}>
-                <div className={`${heroSection.Background} background z-1 inset-0 absolute`} ></div>
+                <div className={`absolute-background ${heroSection.Background} background z-1 inset-0 absolute`} ></div>
                 <HeroSection />
             </section>
         </>

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "es2023",
     "lib": ["ES2023", "DOM"],
@@ -19,7 +20,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Absolute path */
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    
   },
   "include": ["src"]
 }
