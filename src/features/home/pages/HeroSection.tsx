@@ -3,7 +3,8 @@ import MainSearch from "../../../shared/layout/header/search/MainSearch";
 import tabs from './tabs.module.css';
 import tabsOverride from './tabsOverride.module.css';
 import BuySearch from "../../buy/components/BuySearch";
-import RentSearch from "@/features/rent/components/RentSearch";
+import RentSearch from "@/features/rent/components/BrowsingSearch";
+import BrowsingSearch from "@/features/rent/components/BrowsingSearch";
 
 export default function HeroSection() {
     return (
@@ -23,14 +24,16 @@ export default function HeroSection() {
                     <Tabs.Indicator className={`${tabs.Indicator} ${tabsOverride.Indicator}`} />
                 </Tabs.List>
                 <div className={`${tabs.PanelViewport} ${tabsOverride.PanelViewport} backdrop-blur-sm`}>
-                    <Tabs.Panel className={`THE-PANEL ${tabs.Panel} ${tabsOverride.Panel}`} value="buy">
-                        <BuySearch />
+                    <Tabs.Panel className={`THE-PANEL ${tabs.Panel} ${tabsOverride.Panel} h-15`} value="buy">
+                        <BrowsingSearch listingType="SALE" />
+
                     </Tabs.Panel>
-                    <Tabs.Panel className={`THE-PANEL ${tabs.Panel} ${tabsOverride.Panel}`} value="rent">
-                        <RentSearch />
+                    <Tabs.Panel className={`THE-PANEL ${tabs.Panel} ${tabsOverride.Panel} h-15`} value="rent">
+                        <BrowsingSearch listingType="RENT" />
                     </Tabs.Panel>
-                    <Tabs.Panel className={`THE-PANEL ${tabs.Panel} ${tabsOverride.Panel}`} value="sell">
-                        <MainSearch />
+                    <Tabs.Panel className={`THE-PANEL ${tabs.Panel} ${tabsOverride.Panel} h-15`} value="sell">
+                        <BrowsingSearch listingType="SALE" />
+
                     </Tabs.Panel>
                 </div>
             </Tabs.Root>

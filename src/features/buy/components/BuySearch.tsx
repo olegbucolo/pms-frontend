@@ -68,9 +68,11 @@ export default function BuySearch() {
                             </Autocomplete.Status>
                             <Autocomplete.List>
                                 {(item) => (
-                                    <Autocomplete.Item key={item.id} value={item} className={autocomplete.Item}>
-                                        <span className={autocomplete.Title}>{item.title}</span>s
-                                        <span className={autocomplete.Subtitle}>{item.subtitle}</span>
+                                    <Autocomplete.Item key={item.id} value={item} className={autocompleteO.Item}>
+                                        <span className={autocompleteO.TextItem}>
+                                            <span className={autocompleteO.TextName}>{item.title}</span>
+                                            <span className={autocompleteO.TextPrice}>{item.subtitle}</span>
+                                        </span>
                                     </Autocomplete.Item>
                                 )}
                             </Autocomplete.List>

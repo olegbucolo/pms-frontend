@@ -37,6 +37,7 @@ export function useSearch(config: SearchConfig): UseSearchReturn {
             startTransition(async () => {
                 setError(null)
                 try {
+
                     // const res = await fetch(`/api${endpoint}?q=${encodeURIComponent(nextValue)}`, {
                     const res = await fetch(`${endpoint}`, {
                         signal: controller.signal,

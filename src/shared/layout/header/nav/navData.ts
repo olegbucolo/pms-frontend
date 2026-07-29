@@ -1,16 +1,16 @@
 export const exploreLinks = [
     {
-        href: '/buy',
+        href: '/search?type=SALE',
         title: 'Buy',
         description: 'Find the perfect property to call home.',
     },
     {
-        href: '/rent',
+        href: '/search?type=RENT',
         title: 'Rent',
         description: 'Find your perfect place to stay.',
     },
     {
-        href: '/auctions',
+        href: '/valuation',
         title: 'Auctions',
         description: 'Discover properties available through auction.',
     },

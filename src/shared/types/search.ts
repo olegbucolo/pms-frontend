@@ -21,3 +21,7 @@ export interface UseSearchReturn {
     cancel: () => void
 }
 
+export interface SearchBarProps{
+    listingType: 'SALE' | 'RENT'
+}
+
