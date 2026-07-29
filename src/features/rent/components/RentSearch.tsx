@@ -2,12 +2,11 @@ import { Autocomplete, Button } from "@base-ui/react"
 import type { ListingApiResponse } from "../../../shared/types/Listing"
 import { useSearch } from "../../../shared/hooks/useSearch"
 
-import styles from '@/shared/layout/header/search/index.module.css'
+import autocomplete from '@/shared/layout/header/search/autocomplete.module.css'
 import buttoncss from '@/shared/layout/header/button.module.css'
 import buttonSearch from '@/shared/layout/header/search/buttonSearch.module.css'
-import autocompleteSearch from '@/shared/layout/header/search/autocompleteSearch.module.css'
+import autocompleteO from '@/shared/layout/header/search/autocompleteO.module.css'
 import type { ReactNode } from "react"
-import { DiVim } from "react-icons/di"
 
 const transformRent = (raw: unknown) => {
     const data = raw as ListingApiResponse
@@ -29,7 +28,7 @@ export default function RentSearch() {
         if (isPending) {
             return (
                 <>
-                    <span className={styles.Spinner} aria-hidden />
+                    <span className={autocomplete.Spinner} aria-hidden />
                     ...Searching
                 </>
             )
@@ -54,21 +53,23 @@ export default function RentSearch() {
         <Autocomplete.Root items={results} value={query} onValueChange={setQuery}>
             <Autocomplete.InputGroup
                 className='INPUT-GGROUP h-15 flex w-full overflow-hidden z-10 justify-between items-center rounded-4xl p-0.75'>
-                <Autocomplete.Input placeholder="Search..." className={`${styles.Input} ${autocompleteSearch.Input}`} />
+                <Autocomplete.Input placeholder="Search..." className={`${autocomplete.Input} ${autocompleteO.Input}`} />
                 <Button className={`${buttoncss.Button} ${buttonSearch.Button}`}>Search</Button>
             </Autocomplete.InputGroup>
             <Autocomplete.Portal hidden={!status}>
-                <Autocomplete.Positioner className={`${styles.Positioner} `} sideOffset={4} align="start">
-                    <Autocomplete.Popup className={`${styles.Popup} rounded-4xl py-5 bg-transparent! backdrop-blur-sm`} aria-busy={isPending || undefined}>
-                        <div className={styles.Viewport}>
+                <Autocomplete.Positioner className={`${autocomplete.Positioner} `} sideOffset={4} align="start">
+                    <Autocomplete.Popup className={`${autocomplete.Popup} rounded-4xl py-5 bg-transparent! backdrop-blur-sm`} aria-busy={isPending || undefined}>
+                        <div className={autocomplete.Viewport}>
                             <Autocomplete.Status>
-                                {status && <div className={styles.Status}>{status}</div>}
+                                {status && <div className={autocomplete.Status}>{status}</div>}
                             </Autocomplete.Status>
                             <Autocomplete.List>
                                 {(item) => (
-                                    <Autocomplete.Item key={item.id} className={styles.Item}>
-                                        <span className={styles.Title}>{item.title}</span>
-                                        <span className={styles.Subtitle}>{item.subtitle}</span>
+                                    <Autocomplete.Item key={item.id} className={autocompleteO.Item}>
+                                        <span className={autocompleteO.TextItem}>
+                                            <span className={autocompleteO.TextName}>{item.title}</span>
+                                            <span className={autocompleteO.TextPrice}>{item.subtitle}</span>
+                                        </span>
                                     </Autocomplete.Item>
                                 )}
                             </Autocomplete.List>

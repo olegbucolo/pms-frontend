@@ -21,7 +21,6 @@ export function useSearch(config: SearchConfig): UseSearchReturn {
         setQuery(nextValue)
         cancel()
 
-
         if (!nextValue) {
             setResults([])
             setError(null)

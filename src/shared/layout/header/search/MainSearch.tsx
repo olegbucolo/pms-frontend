@@ -1,9 +1,9 @@
 import { Autocomplete, Button } from '@base-ui/react';
 import { useRef, useState, useEffect, useTransition, type ReactNode } from 'react';
-import styles from './index.module.css'
+import autocomplete from './autocomplete.module.css'
 import buttoncss from '../button.module.css'
 import buttonSearch from './buttonSearch.module.css'
-import autocompleteSearch from './autocompleteSearch.module.css'
+import autocompleteO from './autocompleteO.module.css'
 
 export default function MainSearch() {
 
@@ -21,7 +21,7 @@ export default function MainSearch() {
         if (isPending) {
             return (
                 <>
-                    <span className={styles.Spinner} aria-hidden />
+                    <span className={autocomplete.Spinner} aria-hidden />
                     Searching…
                 </>
             );
@@ -83,24 +83,24 @@ export default function MainSearch() {
 
             <Autocomplete.InputGroup
                 className='h-15 flex w-full overflow-hidden z-10 justify-between items-center rounded-4xl p-0.75'>
-                <Autocomplete.Input placeholder="Search..." className={`${styles.Input} ${autocompleteSearch.Input}`} />
+                <Autocomplete.Input placeholder="Search..." className={`${autocomplete.Input} ${autocompleteO.Input}`} />
                 <Button className={`${buttoncss.Button} ${buttonSearch.Button}`}>Search</Button>
             </Autocomplete.InputGroup>
 
 
             <Autocomplete.Portal hidden={!status}>
-                <Autocomplete.Positioner className={`${styles.Positioner} `} sideOffset={4} align="start">
-                    <Autocomplete.Popup className={`${styles.Popup} rounded-4xl py-5 bg-transparent! backdrop-blur-sm`} aria-busy={isPending || undefined}>
-                        <div className={styles.Viewport}>
+                <Autocomplete.Positioner className={`${autocomplete.Positioner} `} sideOffset={4} align="start">
+                    <Autocomplete.Popup className={`${autocomplete.Popup} rounded-4xl py-5 bg-transparent! backdrop-blur-sm`} aria-busy={isPending || undefined}>
+                        <div className={autocomplete.Viewport}>
                             <Autocomplete.Status>
-                                {status && <div className={styles.Status}>{status}</div>}
+                                {status && <div className={autocomplete.Status}>{status}</div>}
                             </Autocomplete.Status>
                             <Autocomplete.List>
                                 {(movie: Movie) => (
-                                    <Autocomplete.Item key={movie.id} className={styles.Item} value={movie}>
-                                        <span className={styles.MovieItem}>
-                                            <span className={styles.MovieName}>{movie.title}</span>
-                                            <span className={styles.MovieYear}>{movie.year}</span>
+                                    <Autocomplete.Item key={movie.id} className={autocomplete.Item} value={movie}>
+                                        <span className={autocomplete.TextItem}>
+                                            <span className={autocomplete.TextName}>{movie.title}</span>
+                                            <span className={autocomplete.TextYear}>{movie.year}</span>
                                         </span>
                                     </Autocomplete.Item>
                                 )}

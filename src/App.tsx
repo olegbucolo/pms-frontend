@@ -3,6 +3,8 @@ import DefaultLayout from './shared/layout/DefaultLayout'
 import HomePage from './features/home/pages/HomePage'
 import RentSearch from './features/rent/components/RentSearch'
 import BuySearch from './features/buy/components/BuySearch'
+import BrowsingLayout from './shared/layout/BrowsingLayout'
+import BrowsingPage from './features/pages/BrowsingPage'
 
 function App() {
 
@@ -10,9 +12,10 @@ function App() {
     <>
       <Routes>
         <Route element={<DefaultLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="rent/" element={<RentSearch />}></Route>
-          <Route path="buy/" element={<BuySearch />}></Route>
+          <Route index element={<HomePage />} />
+        </Route>
+        <Route path="/search" element={<BrowsingLayout />}>
+          <Route index element={<BrowsingPage />} />
         </Route>
 
       </Routes>

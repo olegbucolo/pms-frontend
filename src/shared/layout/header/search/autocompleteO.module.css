@@ -1,0 +1,83 @@
+.Input:focus {
+    outline: none;
+}
+
+.Input{
+    padding-left: 1.5rem;
+    background-color: transparent;
+    color: black;
+    font-size: 1.2rem;
+    width: 100%;
+
+    &::placeholder{
+        color: black;
+        font-size: 1.2rem;
+    }
+}
+
+.Item {
+  box-sizing: border-box;
+  outline: 0;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+  padding-block: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: flex;
+  font-size: 0.875rem;
+  line-height: 1rem;
+
+  &[data-highlighted] {
+    z-index: 0;
+    position: relative;
+    color: white;
+
+    @media (prefers-color-scheme: dark) {
+      color: oklch(14.5% 0 0deg);
+    }
+  }
+
+  &[data-highlighted]::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    background-color: oklch(14.5% 0 0deg);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: white;
+    }
+  }
+}
+
+.TextItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.TextName {
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+.TextPrice {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: oklch(55.6% 0 0deg);
+
+  @media (prefers-color-scheme: dark) {
+    color: oklch(70.8% 0 0deg);
+  }
+
+  .Item[data-highlighted] & {
+    color: oklch(87% 0 0deg);
+
+    @media (prefers-color-scheme: dark) {
+      color: oklch(55.6% 0 0deg);
+    }
+  }
+}

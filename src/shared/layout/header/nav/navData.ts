@@ -15,9 +15,9 @@ export const exploreLinks = [
         description: 'Discover properties available through auction.',
     },
     {
-        href: '/projects',
-        title: 'Projects',
-        description: 'Support and finance exciting property projects.',
+        href: '/valuation',
+        title: 'Home Valuation',
+        description: 'See how much your property is worth',
     },
 ];
 
@@ -36,9 +36,9 @@ export const listLinks = [
     },
     {
         href: '/react/handbook/composition',
-        title: 'Projects',
+        title: 'Work in progress',
         description:
-            'Share your project and let someone bring it to life. Hopefully.',
+            'Share the project you are building.',
     },
     {
         href: '/react/handbook/composition',
@@ -48,48 +48,48 @@ export const listLinks = [
     },
 ];
 
-export const partnersLinks = [
+export const talkToUsLinks = [
     {
-        href: '/partners/design',
-        title: 'Design',
+        href: '/talk-to-us/buy',
+        title: 'Buy a Property',
         description:
-            'Architects, Interior Designers, Landscape Architects, and Structural Engineers.',
+            'Get expert guidance to find and purchase your ideal home or investment property.',
     },
     {
-        href: '/partners/construction',
-        title: 'Construction',
+        href: '/talk-to-us/sell',
+        title: 'Sell Your Property',
         description:
-            'Construction Companies, General Contractors, and Renovation Companies.',
+            'Receive professional support to market, value, and sell your property successfully.',
     },
     {
-        href: '/partners/finance',
-        title: 'Finance',
+        href: '/talk-to-us/rent',
+        title: 'Rent or Lease',
         description:
-            'Banks, Mortgage Brokers, Investors, and Private Lenders.',
+            'Looking to rent a home or lease out your property? We can help with both.',
     },
     {
-        href: '/partners/property-services',
-        title: 'Property Services',
+        href: '/talk-to-us/valuation',
+        title: 'Home Valuation',
         description:
-            'Real Estate Agencies, Property Managers, Surveyors, and Appraisers.',
+            'Request a professional estimate of your property’s current market value.',
     },
     {
-        href: '/partners/legal',
-        title: 'Legal',
+        href: '/talk-to-us/invest',
+        title: 'Investment Advice',
         description:
-            'Notaries and Lawyers.',
+            'Explore real estate investment opportunities with guidance from our specialists.',
     },
     {
-        href: '/partners/home-services',
-        title: 'Home Services',
+        href: '/talk-to-us/contact',
+        title: 'General Enquiries',
         description:
-            'Electricians, Plumbers, HVAC Specialists, and Smart Home Installers.',
+            'Have questions or need assistance? Contact our team for personalized support.',
     },
 ];
 
 export const navItems = [
     { title: 'Explore', children: exploreLinks },
     { title: 'List', children: listLinks },
-    { title: 'Partners', children: partnersLinks },
+    { title: 'Talk to us', children: talkToUsLinks },
     { title: 'About', href: 'https://www.google.com' },
 ];
