@@ -2,7 +2,7 @@ import { Autocomplete, Button } from '@base-ui/react';
 import { useRef, useState, useEffect, useTransition, type ReactNode } from 'react';
 import autocomplete from './autocomplete.module.css'
 import buttoncss from '../button.module.css'
-import buttonSearch from './buttonSearch.module.css'
+import buttonO from '@/shared/layout/header/buttonO.module.css'
 import autocompleteO from './autocompleteO.module.css'
 
 export default function MainSearch() {
@@ -84,7 +84,7 @@ export default function MainSearch() {
             <Autocomplete.InputGroup
                 className='h-15 flex w-full overflow-hidden z-10 justify-between items-center rounded-4xl p-0.75'>
                 <Autocomplete.Input placeholder="Search..." className={`${autocomplete.Input} ${autocompleteO.Input}`} />
-                <Button className={`${buttoncss.Button} ${buttonSearch.Button}`}>Search</Button>
+                <Button className={`${buttoncss.Button} ${buttonO.Button}`}>Search</Button>
             </Autocomplete.InputGroup>
 
 

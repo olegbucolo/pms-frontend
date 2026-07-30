@@ -1,13 +1,15 @@
 import { Autocomplete, Button } from "@base-ui/react"
 import type { ListingApiResponse, ListingDto } from "../../../shared/types/Listing"
 import { useSearch } from "../../../shared/hooks/useSearch"
+import { RiSearch2Line } from "react-icons/ri";
+import buttonO from '@/shared/layout/header/buttonO.module.css'
 
 import autocomplete from '@/shared/layout/header/search/autocomplete.module.css'
 import buttoncss from '@/shared/layout/header/button.module.css'
-import buttonSearch from '@/shared/layout/header/search/buttonSearch.module.css'
 import autocompleteO from '@/shared/layout/header/search/autocompleteO.module.css'
 import type { ReactNode } from "react"
 import type { SearchBarProps } from "@/shared/types/search"
+import { useLocation } from "react-router-dom";
 
 const transform = (raw: unknown) => {
     const data = raw as ListingApiResponse;
@@ -19,7 +21,10 @@ const transform = (raw: unknown) => {
 }
 
 export default function BrowsingSearch({ listingType }: SearchBarProps) {
-    console.log('browsing search called')
+
+    const location = useLocation();
+    const isBrowsingPage = location.pathname.includes('search') ? true : false;
+
     const { query, setQuery, results, isPending, error } = useSearch({
         endpoint: 'http://localhost:8080/api/v1/listings',
         debounceMs: 400,
@@ -57,7 +62,10 @@ export default function BrowsingSearch({ listingType }: SearchBarProps) {
             <Autocomplete.InputGroup
                 className='INPUT-GGROUP h-full flex w-full overflow-hidden z-10 justify-between items-center rounded-4xl p-0.75'>
                 <Autocomplete.Input placeholder="Search..." className={`${autocomplete.Input} ${autocompleteO.Input} h-full`} />
-                <Button className={`${buttoncss.Button} ${buttonSearch.Button}`}>Search</Button>
+                <Button className={`${buttoncss.Button} ${buttonO.Button}  `}>
+                    {isBrowsingPage ? '' : 'Search'}
+                    <RiSearch2Line className="text-2xl" />
+                </Button>
             </Autocomplete.InputGroup>
             <Autocomplete.Portal hidden={!status}>
                 <Autocomplete.Positioner className={`${autocomplete.Positioner} `} sideOffset={4} align="start">

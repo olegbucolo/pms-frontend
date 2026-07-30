@@ -5,7 +5,7 @@ import type {ListingApiResponse } from "../../../shared/types/Listing";
 
 import autocomplete from '@/shared/layout/header/search/autocomplete.module.css'
 import buttoncss from '@/shared/layout/header/button.module.css'
-import buttonSearch from '@/shared/layout/header/search/buttonSearch.module.css'
+import buttonO from '@/shared/layout/header//buttonO.module.css'
 import autocompleteO from '@/shared/layout/header/search/autocompleteO.module.css'
 import type { ReactNode } from "react";
 
@@ -57,7 +57,7 @@ export default function BuySearch() {
             <Autocomplete.InputGroup
                 className='INPUT-GGROUP h-15 flex w-full overflow-hidden z-10 justify-between items-center rounded-4xl p-0.75'>
                 <Autocomplete.Input placeholder="Search..." className={`${autocomplete.Input} ${autocompleteO.Input}`} />
-                <Button className={`${buttoncss.Button} ${buttonSearch.Button}`}>Search</Button>
+                <Button className={`${buttoncss.Button} ${buttonO.Button}`}>Search</Button>
             </Autocomplete.InputGroup>
             <Autocomplete.Portal hidden={!status}>
                 <Autocomplete.Positioner className={`${autocomplete.Positioner} `} sideOffset={4} align="start">

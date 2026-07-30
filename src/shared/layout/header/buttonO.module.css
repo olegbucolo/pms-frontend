@@ -1,0 +1,23 @@
+/* overriding default styles of the button component from base ui library */
+
+.Button {
+  border-radius: 1rem;
+  background-color: black;
+  height: 100%;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+  color: white;
+
+  @media (hover: hover) {
+    &:hover:not([data-disabled]) {
+      background-color: oklch(26.9% 0 0deg);
+    }
+  }
+
+  &:active:not([data-disabled]) {
+    background-color: oklch(37.1% 0 0deg);
+
+  }
+
+}

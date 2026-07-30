@@ -13,11 +13,11 @@ export default function MainDrawer() {
                 <LoginAvatar />
             </Drawer.Trigger>
             <Drawer.Portal>
-                <Drawer.Backdrop className={`${styles.Backdrop} ${separator.Container}`} />
+                <Drawer.Backdrop className={`WHERE-ARE-WE ${styles.Backdrop} ${separator.Container}`} />
                 <Drawer.Viewport className={styles.Viewport}>
                     <Drawer.Popup className={styles.Popup}>
                         <Drawer.Content className={styles.Content}>
-                            <div className='flex items-center justify-between'>
+                            <div className='flex items-center justify-between '>
                                 <div className='flex items-center '>
                                     <LoginAvatar />
                                     <h3 className='ms-3'>Oleg Bucolo</h3>
