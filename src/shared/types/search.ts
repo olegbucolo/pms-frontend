@@ -1,8 +1,10 @@
+
+export type ListingType = 'SALE' | 'RENT';
+export type PropertyType = 'APARTMENT' | 'HOUSE' | 'GARAGE' | 'LAND' | 'COMMERCIAL';
+
 export interface SearchResult {
-    id: string
     title: string
-    subtitle: string
-    image?: string
+    filters: SearchFilters
 }
 
 export interface SearchConfig {
@@ -21,7 +23,21 @@ export interface UseSearchReturn {
     cancel: () => void
 }
 
-export interface SearchBarProps{
-    listingType: 'SALE' | 'RENT'
+export interface SearchBarProps {
+    listingType: ListingType
 }
 
+
+export interface SearchFilters {
+    listingType: ListingType
+    city: string | null
+    zipCode: string | null
+    street: string | null
+    propertyType: PropertyType | null
+    minPrice: number | null
+    maxPrice: number | null
+    MinBedrooms: number | null
+    lotSize: number | null
+    hasGarage: boolean | null
+    floorNumber: number | null
+}

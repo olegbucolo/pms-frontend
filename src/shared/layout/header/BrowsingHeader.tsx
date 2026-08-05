@@ -8,7 +8,6 @@ export default function BrowsingHeader() {
     const [searchParams] = useSearchParams();
     const listingType = (searchParams.get('type')?.toUpperCase() || 'SALE') as 'SALE' | 'RENT';
     
-    console.log('listingType now: ', listingType)
     return (
         <header className="fixed inset-x-0 z-5" >
             <nav className="flex justify-between h-20 items-center px-5 mx-auto p-3">
