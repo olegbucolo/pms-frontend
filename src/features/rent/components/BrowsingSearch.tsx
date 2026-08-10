@@ -8,7 +8,7 @@ import autocomplete from '@/shared/layout/header/search/autocomplete.module.css'
 import buttoncss from '@/shared/layout/header/button.module.css'
 import autocompleteO from '@/shared/layout/header/search/autocompleteO.module.css'
 import { useEffect, useState, type ReactNode } from "react"
-import type { SearchBarProps, SearchResult } from "@/shared/types/search"
+import type { SearchBarProps, SearchFilters, SearchResult } from "@/shared/types/search"
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 const transform = (raw: unknown) => {
@@ -28,9 +28,23 @@ export default function BrowsingSearch({ listingType }: SearchBarProps) {
     const [searchParams] = useSearchParams();
     const q = searchParams.get('q');
 
+    const [searchFilters, setSearchFilters] = useState<String>('');
+
+    const computeFilters = (filters: SearchFilters): String => {
+        const computedFilters = Object.entries(filters)
+            .filter(([, value]) => value !== null && value !== undefined && value !== '')
+            .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
+            .join('&')
+        return computedFilters;
+    }
+
     function handleSubmit() {
+        // console.log('searchFilters', searchFilters)
+        const search = searchFilters 
+        ? `${searchFilters}&q=${encodeURIComponent(query)}`
+        : `listingType=${encodeURIComponent(listingType)}`;
         navigate(
-            { pathname: '/search', search: `?type=${listingType}&q=${encodeURIComponent(query)}` },
+            { pathname: '/search', search,},
             { replace: false }
         )
     }
@@ -38,6 +52,10 @@ export default function BrowsingSearch({ listingType }: SearchBarProps) {
     useEffect(() => {
         if (q) setQuery(q)
     }, [])
+
+    useEffect(() => {
+        // console.log('TASTY FILTERS', searchFilters)
+    }, [searchFilters])
 
     // isBrowsingPage added for the 'search' text inside the search bar, ux only
     const location = useLocation();
@@ -64,7 +82,7 @@ export default function BrowsingSearch({ listingType }: SearchBarProps) {
         if (query === "") {
             return null
         }
-        console.log('results', results)
+        // console.log('results', results)
 
         if (results.length === 0) {
             return `property ${query} does not exist`
@@ -76,7 +94,7 @@ export default function BrowsingSearch({ listingType }: SearchBarProps) {
     const status = getStatus();
 
     return (
-        <Autocomplete.Root items={results} value={query} onValueChange={setQuery}>
+        <Autocomplete.Root items={results} value={query} onValueChange={setQuery} filter={null}>
             <Autocomplete.InputGroup
                 className='INPUT-GGROUP h-full flex w-full overflow-hidden z-10 justify-between items-center rounded-4xl p-0.75'>
                 <Autocomplete.Input placeholder="Search..." className={`${autocomplete.Input} ${autocompleteO.Input} h-full`} />
@@ -94,9 +112,9 @@ export default function BrowsingSearch({ listingType }: SearchBarProps) {
                             </Autocomplete.Status>
                             <Autocomplete.List>
                                 {(item) => (
-                                    <Autocomplete.Item key={item.id} className={autocompleteO.Item}>
+                                    <Autocomplete.Item key={item.title} value={item.title} className={autocompleteO.Item}>
                                         <span className={autocompleteO.TextItem}>
-                                            <span className={autocompleteO.TextName}>{item.title}</span>
+                                            <span className={autocompleteO.TextName} onClick={() => setSearchFilters(computeFilters(item.filters))}>{item.title}</span>
                                         </span>
                                     </Autocomplete.Item>
                                 )}

@@ -7,10 +7,10 @@ export default function MainNav() {
     return (
         <NavigationMenu.Root className={`${navigationMenu.Root} `}>
             <NavigationMenu.List className={`${navigationMenu.List} justify-center`}>
-                {navItems.map(navItems =>
-                    navItems.children?.length
-                        ? <NavDropdown key={navItems.title} item={navItems} />
-                        : <NavSimpleLink key={navItems.title} item={navItems} />)}
+                {navItems.map(item =>
+                    item.children?.length
+                        ? <NavDropdown key={item.title} item={item} />
+                        : <NavSimpleLink key={item.title} item={item} />)}
             </NavigationMenu.List>
 
             <NavigationMenu.Portal>

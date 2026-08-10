@@ -1,11 +1,11 @@
 export const exploreLinks = [
     {
-        href: '/search?type=SALE',
+        href: '/search?listingType=SALE',
         title: 'Buy',
         description: 'Find the perfect property to call home.',
     },
     {
-        href: '/search?type=RENT',
+        href: '/search?listingType=RENT',
         title: 'Rent',
         description: 'Find your perfect place to stay.',
     },
