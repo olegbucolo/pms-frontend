@@ -16,11 +16,11 @@ export interface ListingDto {
     status: string
     listedDate: string
     expiryDate: string
-    property: PropertyDto
-    org: OrgDto
+    property: PropertySummaryDto
+    org: OrgSummaryDto
 }
 
-export interface PropertyDto {
+export interface PropertySummaryDto {
     id: number
     name: string
     description: string
@@ -34,7 +34,7 @@ export interface AddressDto {
     zipCode: string
 }
 
-export interface OrgDto {
+export interface OrgSummaryDto {
     id: number
     name: string
     address: string

@@ -42,6 +42,7 @@ export function useSearch(config: SearchConfig): UseSearchReturn {
                     const res = await fetch(`${endpoint}?q=${encodeURIComponent(nextValue)}`, {
                         signal: controller.signal,
                     })
+                    console.log(`end: ${endpoint}?q=${encodeURIComponent(nextValue)}`);
                     if (!res.ok) throw new Error('Search failed')
                     const raw = await res.json()
                     const items = transform(raw)

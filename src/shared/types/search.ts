@@ -36,7 +36,7 @@ export interface SearchFilters {
     propertyType: PropertyType | null
     minPrice: number | null
     maxPrice: number | null
-    MinBedrooms: number | null
+    minBedrooms: number | null
     lotSize: number | null
     hasGarage: boolean | null
     floorNumber: number | null
