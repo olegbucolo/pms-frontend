@@ -1,5 +1,6 @@
 import BrowsingFilters from "@/features/browsing/filters/BrowsingFilters";
 import { useBrowseListings } from "@/features/browsing/hooks/useBrowseListings";
+import ListingCard from "../rent/components/ListingCard";
 
 export default function BrowsingPage() {
     const { filters, setFilters, listings, isPending, error } = useBrowseListings();
@@ -17,7 +18,8 @@ export default function BrowsingPage() {
             ) : (
                 <div className="grid gap-4">
                     {listings.map((l) => (
-                        <div key={l.id}>{l.property.address.street} — ${l.price.toLocaleString()}</div>
+                            <ListingCard listing={l}/>
+
                     ))}
                 </div>
             )}
