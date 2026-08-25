@@ -18,7 +18,7 @@ export default function BrowsingPage() {
             ) : (
                 <div className="grid gap-4">
                     {listings.map((l) => (
-                            <ListingCard listing={l}/>
+                            <ListingCard key={l.id} listing={l}/>
 
                     ))}
                 </div>
