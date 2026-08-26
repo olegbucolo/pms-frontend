@@ -49,7 +49,7 @@ export default function ListingCard({ listing }: { listing: ListingDto }) {
                     alt="" />
             </div> */}
             <Swiper
-                loop={true}
+                loop={false}
                 pagination={{
                     dynamicBullets: true,
                 }}
@@ -65,7 +65,7 @@ export default function ListingCard({ listing }: { listing: ListingDto }) {
                         <GoHeart className="w-full h-full pt-1 hover:text-red-600 transition-[color] duration-200" />
                     </div>
                 </a>
-                <div className="pointer-events-none absolute z-2 inset-0 shadow-[inset_0_-2rem_1rem_-1rem_black]" />
+                <div className="pointer-events-none absolute z-2 inset-0 shadow-[inset_0_-1rem_1rem_-.5rem_black]" />
 
                 <SwiperSlide className="flex items-center justify-center overflow-hidden">
                     <img className="w-full h-full object-cover object-center"
