@@ -6,7 +6,7 @@ export default function BrowsingLayout() {
     return (
         <>
             <BrowsingHeader />
-            <main>
+            <main className="">
                 <Outlet />
             </main>
             <Footer />
