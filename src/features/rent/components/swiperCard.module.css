@@ -1,0 +1,6 @@
+
+.ListingSwiper {
+  --swiper-pagination-bullet-inactive-color: white;
+  --swiper-pagination-bullet-inactive-opacity: 0.45;
+  --swiper-pagination-color: white;
+}
