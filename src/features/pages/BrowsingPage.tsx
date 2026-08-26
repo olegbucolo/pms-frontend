@@ -6,7 +6,7 @@ export default function BrowsingPage() {
     const { filters, setFilters, listings, isPending, error } = useBrowseListings();
 
     return (
-        <div className="h-540 bg-white-600">
+        <div className="h-540 max-w-7xl bg-white-600 mx-auto">
             <BrowsingFilters filters={filters} onApply={setFilters} />
 
             {isPending ? (
@@ -16,7 +16,7 @@ export default function BrowsingPage() {
             ) : listings.length === 0 ? (
                 <div>No properties match your filters</div>
             ) : (
-                <div className="grid gap-4">
+                <div className="grid grid-cols-3 gap-4">
                     {listings.map((l) => (
                             <ListingCard key={l.id} listing={l}/>
 
