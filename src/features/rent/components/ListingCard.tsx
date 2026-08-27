@@ -42,14 +42,8 @@ export default function ListingCard({ listing }: { listing: ListingDto }) {
         <div className="hover:scale-101 transition-[scale] duration-300 p-2 pb-8 rounded-2xl overflow-hidden relative h-150 flex flex-col justify-center items-start">
 
             {/* TOP */}
-            {/*image */}
-            {/* <div className="opacity-50 h-1/2 w-full overflow-hidden">
-                <img className="w-full"
-                    src={`https://picsum.photos/seed/${listing.id + 2000000}/200/200`}
-                    alt="" />
-            </div> */}
             <Swiper
-                loop={false}
+                loop={true}
                 pagination={{
                     dynamicBullets: true,
                 }}
@@ -101,10 +95,7 @@ export default function ListingCard({ listing }: { listing: ListingDto }) {
                         alt="" /></SwiperSlide>
             </Swiper>
 
-
-            {/* middle */}
-
-
+            {/* MIDDLE */}
             <div className="mt-3 py-3 px-2 w-full">
                 <a className="underline" href="">
                     <h1 className="text-2xl font-normal">{listing.title}</h1>
@@ -113,8 +104,7 @@ export default function ListingCard({ listing }: { listing: ListingDto }) {
                 <div className="pt-2">{`$${listing.price}`}</div>
             </div>
 
-            {/* bottom */}
-
+            {/* BOTTOM */}
             <div className="pt-3 flex items-center mt-auto">
                 <Popover.Root >
                     <Popover.Trigger className={`${popover.Button} border-0! cursor-pointer rounded bg-transparent! ps-0! mr-2! text-xl!`}>

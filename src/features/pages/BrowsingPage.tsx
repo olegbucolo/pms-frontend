@@ -6,8 +6,8 @@ export default function BrowsingPage() {
     const { filters, setFilters, listings, isPending, error } = useBrowseListings();
 
     return (
-        <div className="max-w-7xl mx-auto px-4">
-            <BrowsingFilters filters={filters} onApply={setFilters} />
+        <div className="max-w-7xl mx-auto px-4 pt-30">
+            {/* <BrowsingFilters filters={filters} onApply={setFilters} /> */}
 
             {isPending ? (
                 <div>Loading…</div>
@@ -18,9 +18,7 @@ export default function BrowsingPage() {
             ) : (
                 <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4">
                     {listings.map((l) => (
-                            <ListingCard key={l.id} listing={l}/> 
-                            
-
+                        <ListingCard key={l.id} listing={l} />
                     ))}
                 </div>
             )}

@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import type { SearchFilters } from "@/shared/types/search";
 import { Button, Input, NumberField, Popover, Select } from "@base-ui/react";
-import { IoBedOutline } from "react-icons/io5";
-import { FaCaretDown } from "react-icons/fa";
-import { FaCaretUp } from "react-icons/fa";
-import { FaCheck } from "react-icons/fa6";
-import { FaPlus } from "react-icons/fa6";
-import { FaMinus } from "react-icons/fa6";
+import { FaCaretDown, FaCaretUp, FaCheck, FaPlus, FaMinus } from "react-icons/fa";
 
 import popover from '@/features/browsing/filters/popover.module.css';
 import input from '@/features/browsing/filters/input.module.css';
@@ -28,7 +23,6 @@ const propertyTypes = [
     { label: 'Commercial', value: 'Commercial' },
 ];
 
-
 export default function BrowsingFilters({ filters, onApply }: BrowsingFiltersProps) {
     const [draft, setDraft] = useState<SearchFilters>(filters);
 
@@ -38,10 +32,9 @@ export default function BrowsingFilters({ filters, onApply }: BrowsingFiltersPro
     const num = (v: string) => (v === "" ? null : Number(v));
 
     return (
-        <div className="flex gap-3 py-4 px-2 pt-40 overflow-x-auto">
-
+        <div className="flex gap-3 pb-4 px-2 overflow-x-auto max-w-7xl ps-6 mx-auto">
             <Popover.Root >
-                <Popover.Trigger className={`${popover.Button} cursor-pointer rounded bg-transparent! mr-2! text-xl!`}>
+                <Popover.Trigger className={`${popover.Button} z-1 cursor-pointer rounded bg-transparent! mr-2! text-xl!`}>
                     {(filters.maxPrice || filters.minPrice)
                         ? `Price: ${filters.minPrice} - ${filters.maxPrice}`
                         : `Price`}
@@ -51,6 +44,7 @@ export default function BrowsingFilters({ filters, onApply }: BrowsingFiltersPro
                         <Popover.Popup className={popover.Popup}>
                             <Popover.Arrow className={popover.Arrow} />
                             <Popover.Title className={popover.Title}> </Popover.Title>
+                            {/* INPUT BASE UI ELEMENT */}
                             <div className="flex gap-2">
                                 <label className={input.Label}>
                                     Min price:
@@ -70,10 +64,7 @@ export default function BrowsingFilters({ filters, onApply }: BrowsingFiltersPro
                                         onChange={(e) => update({ maxPrice: num(e.target.value) })}
                                     />
                                 </label>
-                                {/* <input type="number" placeholder="Min price" value={draft.minPrice ?? ""}
-                                        onChange={(e) => update({ minPrice: num(e.target.value) })} />
-                                    <input type="number" placeholder="Max price" value={draft.maxPrice ?? ""}
-                                        onChange={(e) => update({ maxPrice: num(e.target.value) })} /> */}
+
                             </div>
                             <Button className={button.ButtonFilters} onClick={() => onApply(draft)}>Submit</Button>
                         </Popover.Popup>
@@ -82,7 +73,7 @@ export default function BrowsingFilters({ filters, onApply }: BrowsingFiltersPro
             </Popover.Root>
 
             <Popover.Root >
-                <Popover.Trigger className={`${popover.Button} cursor-pointer rounded bg-transparent! mr-2! text-xl!`}>
+                <Popover.Trigger className={`${popover.Button} z-1 cursor-pointer rounded bg-transparent! mr-2! text-xl!`}>
                     {filters.propertyType ? filters.propertyType : 'Property type'}
                 </Popover.Trigger>
                 <Popover.Portal>
@@ -90,6 +81,7 @@ export default function BrowsingFilters({ filters, onApply }: BrowsingFiltersPro
                         <Popover.Popup className={popover.Popup}>
                             <Popover.Arrow className={popover.Arrow} />
                             <Popover.Title className={popover.Title}> </Popover.Title>
+                            {/* SELECT BASE UI ELEMENT */}
                             <div className={select.Field}>
                                 <Select.Root items={propertyTypes} value={draft.propertyType ?? ''} onValueChange={(value) => update({ propertyType: (value || null) as SearchFilters["propertyType"] })}>
                                     <Select.Label className={select.Label}>Property Type</Select.Label>
@@ -123,24 +115,14 @@ export default function BrowsingFilters({ filters, onApply }: BrowsingFiltersPro
                                     </Select.Portal>
                                 </Select.Root>
                             </div>
-                            {/* <select value={draft.propertyType ?? ""} className="border"
-                                    onChange={(e) => update({ propertyType: (e.target.value || null) as SearchFilters["propertyType"] })}>
-                                    <option value="">Any type</option>
-                                    <option value="APARTMENT">Apartment</option>
-                                    <option value="HOUSE">House</option>
-                                    <option value="GARAGE">Garage</option>
-                                    <option value="LAND">Land</option>
-                                    <option value="COMMERCIAL">Commercial</option>
-                                </select> */}
                             <Button className={button.ButtonFilters} onClick={() => onApply(draft)}>Submit</Button>
-
                         </Popover.Popup>
                     </Popover.Positioner>
                 </Popover.Portal>
             </Popover.Root>
 
             <Popover.Root >
-                <Popover.Trigger className={`${popover.Button} cursor-pointer rounded bg-transparent! mr-2! text-xl!`}>
+                <Popover.Trigger className={`${popover.Button} z-1 cursor-pointer rounded bg-transparent! mr-2! text-xl!`}>
                     {filters.minBedrooms ? `Beds: ${filters.minBedrooms}` : 'Beds'}
                 </Popover.Trigger>
                 <Popover.Portal>
@@ -148,7 +130,7 @@ export default function BrowsingFilters({ filters, onApply }: BrowsingFiltersPro
                         <Popover.Popup className={popover.Popup}>
                             <Popover.Arrow className={popover.Arrow} />
                             <Popover.Title className={popover.Title}> </Popover.Title>
-
+                            {/* NUMBER FIELD BASE UI ELEMENT */}
                             <NumberField.Root onValueChange={(defaultValue) => update({ minBedrooms: defaultValue })} id="1" defaultValue={draft.minBedrooms ?? 0} className={numberField.Field}>
                                 <NumberField.ScrubArea className={numberField.ScrubArea}>
                                     <label htmlFor="1" className={numberField.Label}>
@@ -169,23 +151,14 @@ export default function BrowsingFilters({ filters, onApply }: BrowsingFiltersPro
                                     </NumberField.Increment>
                                 </NumberField.Group>
                             </NumberField.Root>
-
-                            {/* <input
-                                className="border"
-                                type="number"
-                                placeholder="Min bedrooms"
-                                value={draft.minBedrooms ?? ""}
-                                onChange={(e) => update({ minBedrooms: num(e.target.value) })} /> */}
                             <Button className={button.ButtonFilters} onClick={() => onApply(draft)}>Submit</Button>
-
-
                         </Popover.Popup>
                     </Popover.Positioner>
                 </Popover.Portal>
             </Popover.Root>
 
             <Popover.Root >
-                <Popover.Trigger className={`${popover.Button} cursor-pointer rounded bg-transparent! mr-2! text-xl!`}>
+                <Popover.Trigger className={`${popover.Button} z-1 cursor-pointer rounded bg-transparent! mr-2! text-xl!`}>
                     {filters.hasGarage ? `Garage: x${filters.hasGarage}` : 'Garage'}
                 </Popover.Trigger>
                 <Popover.Portal>
@@ -196,7 +169,6 @@ export default function BrowsingFilters({ filters, onApply }: BrowsingFiltersPro
                             <Popover.Description className={popover.Description}>
                                 <label className="flex items-center gap-2 border">
                                     <input
-
                                         type="checkbox"
                                         checked={draft.hasGarage === true}
                                         onChange={(e) => update({ hasGarage: e.target.checked ? true : null })} />
