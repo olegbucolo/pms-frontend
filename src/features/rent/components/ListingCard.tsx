@@ -39,7 +39,7 @@ import { GoHeartFill } from "react-icons/go";
 
 export default function ListingCard({ listing }: { listing: ListingDto }) {
     return (
-        <div className="hover:scale-105 transition-[scale] duration-200 p-2 pb-6 rounded-2xl overflow-hidden relative h-150 flex flex-col justify-center items-start">
+        <div className="hover:scale-101 transition-[scale] duration-300 p-2 pb-8 rounded-2xl overflow-hidden relative h-150 flex flex-col justify-center items-start">
 
             {/* TOP */}
             {/*image */}
@@ -105,7 +105,7 @@ export default function ListingCard({ listing }: { listing: ListingDto }) {
             {/* middle */}
 
 
-            <div className="pt-3">
+            <div className="mt-3 py-3 px-2 w-full">
                 <a className="underline" href="">
                     <h1 className="text-2xl font-normal">{listing.title}</h1>
                 </a>

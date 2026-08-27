@@ -6,7 +6,7 @@ export default function BrowsingPage() {
     const { filters, setFilters, listings, isPending, error } = useBrowseListings();
 
     return (
-        <div className="h-540 max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
             <BrowsingFilters filters={filters} onApply={setFilters} />
 
             {isPending ? (
