@@ -105,7 +105,7 @@ export default function ListingCard({ listing }: { listing: ListingDto }) {
             </div>
 
             {/* BOTTOM */}
-            <div className="pt-3 flex items-center mt-auto">
+            <div className="pt-3 flex items-center mt-auto mb-4">
                 <Popover.Root >
                     <Popover.Trigger className={`${popover.Button} border-0! cursor-pointer rounded bg-transparent! ps-0! mr-2! text-xl!`}>
                         <IoBedOutline className="text-2xl" />2

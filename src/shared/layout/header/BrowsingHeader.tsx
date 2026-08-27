@@ -17,7 +17,7 @@ export default function BrowsingHeader() {
         <header className="fixed inset-x-0 z-5" >
             <div className="relative">
                 {/* blur element */}
-                <div className="absolute backdrop-blur-xl bg-white/80 inset-0"></div>
+                <div className="absolute backdrop-blur-sm bg-[#ffffff]/90 inset-0"></div>
                 <nav className="relative flex justify-between h-20 items-center px-5 mx-auto p-3">
                     {/* logo */}
                     <div className="z-2 left relative min-w-30 h-full flex justify-start items-center overflow-hidden">
