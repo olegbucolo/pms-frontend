@@ -17,6 +17,7 @@ import { IoBedOutline } from "react-icons/io5";
 import { PiBathtub } from "react-icons/pi"
 import { TfiRulerAlt2 } from "react-icons/tfi";
 import { GoHeart } from "react-icons/go";
+import { NavLink } from "react-router-dom";
 /* 
 bathroom: 
 import { GiBathtub } from "react-icons/gi";
@@ -97,9 +98,9 @@ export default function ListingCard({ listing }: { listing: ListingDto }) {
 
             {/* MIDDLE */}
             <div className="mt-3 py-3 px-2 w-full">
-                <a className="underline" href="">
+                <NavLink className="underline" to={`${listing.id}`}>
                     <h1 className="text-2xl font-normal">{listing.title}</h1>
-                </a>
+                </NavLink>
                 <div className="pt-2">{listing.property.address.city} </div>
                 <div className="pt-2">{`$${listing.price}`}</div>
             </div>

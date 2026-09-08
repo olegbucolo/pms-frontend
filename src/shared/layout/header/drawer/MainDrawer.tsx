@@ -30,6 +30,7 @@ export default function MainDrawer() {
                             <Separator orientation="horizontal" className={`${separator.Separator} ${drawerSeparator.Separator}`} />
 
                             <NavLink to="/" className={separator.Link}>prova</NavLink>
+                            <NavLink to="localhost:8080/api/v1/auth/register" className={separator.Link}>fahh</NavLink>
                             {/* <Drawer.Title className={styles.Title}>Drawer</Drawer.Title> */}
                             <Separator orientation="horizontal" className={`${separator.Separator} ${drawerSeparator.Separator}`} />
                             <Drawer.Description className={styles.Description}>

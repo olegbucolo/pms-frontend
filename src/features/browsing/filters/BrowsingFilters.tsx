@@ -159,7 +159,7 @@ export default function BrowsingFilters({ filters, onApply }: BrowsingFiltersPro
 
             <Popover.Root >
                 <Popover.Trigger className={`${popover.Button} z-1 cursor-pointer rounded bg-transparent! mr-2! text-xl!`}>
-                    {filters.hasGarage ? `Garage: x${filters.hasGarage}` : 'Garage'}
+                    {filters.hasGarage ? `Garage: yes` : 'Garage: no'}
                 </Popover.Trigger>
                 <Popover.Portal>
                     <Popover.Positioner sideOffset={8}>
