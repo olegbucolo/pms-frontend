@@ -39,8 +39,9 @@ import { GoHeartFill } from "react-icons/go";
 */
 
 export default function ListingCard({ listing }: { listing: ListingDto }) {
+
     return (
-        <div className="hover:scale-101 transition-[scale] duration-300 p-2 pb-8 rounded-2xl overflow-hidden relative h-150 flex flex-col justify-center items-start">
+        <div className="p-2 pb-8 rounded-2xl overflow-hidden relative h-150 flex flex-col justify-center items-start">
 
             {/* TOP */}
             <Swiper
@@ -49,55 +50,64 @@ export default function ListingCard({ listing }: { listing: ListingDto }) {
                     dynamicBullets: true,
                 }}
                 modules={[Pagination]}
-                className={`${swiperCard.ListingSwiper} mySwiper w-full h-2/3 rounded-2xl`}
+                className={`${swiperCard.ListingSwiper} mySwiper w-full h-2/3 rounded-2xl `}
             >
-                <SwiperSlide className="relative flex items-center justify-center overflow-hidden">
-                    <img className="w-full h-full object-cover object-center"
-                        src={`https://picsum.photos/seed/${listing.id + 1}/800/800`}
-                        alt="" /></SwiperSlide>
                 <a href="">
                     <div className="absolute top-4 right-4 rounded-full p-2 bg-[rgba(255,255,255,.6)] hover:bg-white transition-[background-color] duration-200 w-12 h-12 z-20">
                         <GoHeart className="w-full h-full pt-1 hover:text-red-600 transition-[color] duration-200" />
                     </div>
                 </a>
                 <div className="pointer-events-none absolute z-2 inset-0 shadow-[inset_0_-1rem_1rem_-.5rem_black]" />
+                <SwiperSlide className="relative flex items-center justify-center overflow-hidden">
+                    <img className="w-full h-full object-cover object-center"
+                        src={`https://loremflickr.com/800/600/house,building?lock=${listing.id}`}
+                        alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="flex items-center justify-center overflow-hidden">
+                    <img className="w-full h-full object-cover object-center"
+                        src={`https://loremflickr.com/800/600/house,building?lock=${listing.id + 25}`}
+                        alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="flex items-center justify-center overflow-hidden">
+                    <img className="w-full h-full object-cover object-center"
+                        src={`https://loremflickr.com/800/600/house,building?lock=${listing.id + 30}`}
+                        alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="flex items-center justify-center overflow-hidden">
+                    <img className="w-full h-full object-cover object-center"
+                        src={`https://loremflickr.com/800/600/house,building?lock=${listing.id + 40}`}
+                        alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="flex items-center justify-center overflow-hidden">
+                    <img className="w-full h-full object-cover object-center"
+                        src={`https://loremflickr.com/800/600/house,building?lock=${listing.id + 50}`}
+                        alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="flex items-center justify-center overflow-hidden">
+                    <img className="w-full h-full object-cover object-center"
+                        src={`https://loremflickr.com/800/600/house,building?lock=${listing.id + 60}`}
+                        alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="flex items-center justify-center overflow-hidden">
+                    <img className="w-full h-full object-cover object-center"
+                        src={`https://loremflickr.com/800/600/house,building?lock=${listing.id + 70}`}
+                        alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="flex items-center justify-center overflow-hidden">
+                    <img className="w-full h-full object-cover object-center"
+                        src={`https://loremflickr.com/800/600/house,building?lock=${listing.id + 80}`}
+                        alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="flex items-center justify-center overflow-hidden">
+                    <img className="w-full h-full object-cover object-center"
+                        src={`https://loremflickr.com/800/600/house,building?lock=${listing.id + 90}`}
+                        alt="" />
+                </SwiperSlide>
 
-                <SwiperSlide className="flex items-center justify-center overflow-hidden">
-                    <img className="w-full h-full object-cover object-center"
-                        src={`https://picsum.photos/seed/${listing.id + 1040 + 1}/800/800`}
-                        alt="" /></SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center overflow-hidden">
-                    <img className="w-full h-full object-cover object-center"
-                        src={`https://picsum.photos/seed/${listing.id + 1040 + 20}/800/800`}
-                        alt="" /></SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center overflow-hidden">
-                    <img className="w-full h-full object-cover object-center"
-                        src={`https://picsum.photos/seed/${listing.id + 1040 + 30}/800/800`}
-                        alt="" /></SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center overflow-hidden">
-                    <img className="w-full h-full object-cover object-center"
-                        src={`https://picsum.photos/seed/${listing.id + 1040 + 40}/800/800`}
-                        alt="" /></SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center overflow-hidden">
-                    <img className="w-full h-full object-cover object-center"
-                        src={`https://picsum.photos/seed/${listing.id + 1040 + 50}/800/800`}
-                        alt="" /></SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center overflow-hidden">
-                    <img className="w-full h-full object-cover object-center"
-                        src={`https://picsum.photos/seed/${listing.id + 1040 + 60}/800/800`}
-                        alt="" /></SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center overflow-hidden">
-                    <img className="w-full h-full object-cover object-center"
-                        src={`https://picsum.photos/seed/${listing.id + 1040 + 70}/800/800`}
-                        alt="" /></SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center overflow-hidden">
-                    <img className="w-full h-full object-cover object-center"
-                        src={`https://picsum.photos/seed/${listing.id + 1040 + 80}/800/800`}
-                        alt="" /></SwiperSlide>
             </Swiper>
 
             {/* MIDDLE */}
-            <div className="mt-3 py-3 px-2 w-full">
+            <div className="mt-3 py-3 px-2 w-full h-44!">
                 <NavLink className="underline" to={`${listing.id}`}>
                     <h1 className="text-2xl font-normal">{listing.title}</h1>
                 </NavLink>

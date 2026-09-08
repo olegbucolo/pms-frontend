@@ -1,0 +1,23 @@
+.ListingDetailSwiper {
+  --swiper-pagination-bullet-inactive-color: white;
+  --swiper-pagination-bullet-inactive-opacity: 0.45;
+  --swiper-pagination-color: white;
+  --swiper-navigation-color: yellow;
+}
+
+.SwiperImgC {
+  position: relative;
+}
+
+.SwiperImgC::before {
+  position: absolute;
+  z-index: 10;
+  content: "";
+  left: 50%;
+  right: 0;
+  bottom: -2rem;
+  height: 2rem;
+  width: 4rem;
+  transform: translateX(-50%);
+  box-shadow: 0 0 2rem 1rem black;
+}

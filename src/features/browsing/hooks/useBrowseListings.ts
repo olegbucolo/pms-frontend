@@ -43,9 +43,10 @@ export function useBrowseListings() {
     const [searchParams, setSearchParams] = useSearchParams();
     const [state, setState] = useState<BrowseListingsState>({ listings: [], isPending: false, error: null })
 
-
     const filters = useMemo(() => parseSearchParams(searchParams), [searchParams]);
     const queryString = useMemo(() => buildQueryString(filters), [filters]);
+
+    
 
     useEffect(() => {
         const controller = new AbortController();
