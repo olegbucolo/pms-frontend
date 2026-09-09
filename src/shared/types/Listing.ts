@@ -1,4 +1,3 @@
-
 export interface ListingApiResponse {
     content: ListingDto[]
     page: number
@@ -38,4 +37,30 @@ export interface OrgSummaryDto {
     id: number
     name: string
     address: string
+}
+
+export interface ListingShowDTO{
+        id: number,
+        title: string,
+        description: string,
+        listingType: string,
+        price: number,
+        status: string,
+        createdAt: string,
+        updatedAt: string,
+        listedDate: string,
+        expiryDate: string,
+        property: PropertyDetailDTO,
+        org: OrgDetailDTO
+}
+
+export interface PropertyDetailDTO{
+        id: number,
+        address: AddressDto,
+        type: string
+}
+
+export interface OrgDetailDTO{
+            id: number,
+            address: string
 }

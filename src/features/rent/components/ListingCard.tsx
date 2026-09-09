@@ -60,7 +60,7 @@ export default function ListingCard({ listing }: { listing: ListingDto }) {
                 <div className="pointer-events-none absolute z-2 inset-0 shadow-[inset_0_-1rem_1rem_-.5rem_black]" />
                 <SwiperSlide className="relative flex items-center justify-center overflow-hidden">
                     <img className="w-full h-full object-cover object-center"
-                        src={`https://loremflickr.com/800/600/house,building?lock=${listing.id}`}
+                        src={`https://loremflickr.com/800/600/house,building?lock=${listing.id + 11}`}
                         alt="" />
                 </SwiperSlide>
                 <SwiperSlide className="flex items-center justify-center overflow-hidden">

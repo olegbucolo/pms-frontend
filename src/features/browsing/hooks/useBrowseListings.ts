@@ -46,8 +46,6 @@ export function useBrowseListings() {
     const filters = useMemo(() => parseSearchParams(searchParams), [searchParams]);
     const queryString = useMemo(() => buildQueryString(filters), [filters]);
 
-    
-
     useEffect(() => {
         const controller = new AbortController();
         setState((prev) => ({ ...prev, isPending: true }));

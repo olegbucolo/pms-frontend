@@ -19,5 +19,5 @@
   height: 2rem;
   width: 4rem;
   transform: translateX(-50%);
-  box-shadow: 0 0 2rem 1rem black;
+  box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, .5);
 }
