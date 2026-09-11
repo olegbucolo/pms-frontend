@@ -1,32 +1,80 @@
-# React + TypeScript + Vite
+# PMS
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Full-stack property management and real-estate platform built with **Java, Spring Boot, React and MySQL**.
 
-Currently, two official plugins are available:
+Focused on a simple browsing experience and an AI-assisted search that lets users describe what they are looking for instead of manually configuring multiple filters.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> **🚧 Work in progress** — The project is actively being developed. Backend security is already implemented, while the frontend integration is still in progress.
 
-## React Compiler
+## Showcase
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Navigation
 
-## Expanding the Oxlint configuration
+The main navigation provides quick access to the different sections of the platform.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+![Navigation](assets/pms-navigation-github-gif.gif)
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### User Panel
+
+A sliding user panel provides quick access to user-related actions without leaving the current page.
+
+![User panel](assets/pms-user-panel-github-gif.gif)
+
+### Property Browsing
+
+A simple flow from the home page to property browsing and then to the property details.
+
+![Property browsing](assets/pms-walkthrough-github-gif.gif)
+
+### AI-assisted Search
+
+Users can describe what they are looking for in natural language. The application converts the request into structured search criteria to simplify the search process.
+
+![AI search](assets/pms-ai-suggestion-github-gif.gif)
+
+## Features
+
+* Property browsing and detailed listings
+* Structured property search and filtering
+* AI-assisted natural-language search
+* REST API
+* Dynamic JPA Specifications
+* Responsive React interface
+* Backend authentication and authorization with Spring Security and JWT
+* Frontend security integration — **in progress**
+
+## Tech Stack
+
+**Frontend**
+
+React · TypeScript · Vite · Tailwind CSS · Axios
+
+**Backend**
+
+Java · Spring Boot · Spring Data JPA · Spring Security · Spring AI · MySQL
+
+## Architecture
+
+```text
+React
+  ↓
+REST API
+  ↓
+Spring Boot
+  ↓
+Service / JPA Specifications
+  ↓
+MySQL
+
+Natural-language search
+  ↓
+Spring AI
+  ↓
+Structured search criteria
+  ↓
+Property search
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Repositories
+
+[Frontend](https://github.com/olegbucolo/pms-frontend) · [Backend](https://github.com/olegbucolo/pms)
